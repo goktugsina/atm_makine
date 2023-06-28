@@ -23,6 +23,7 @@ while True:
 
     if islem == "q":
         break
+        
     elif (islem == 1):
         print("Bakiyeniz: {} TL".format(bakiye))
         islem_devam = input("Başka İşlem Yapmak İster misiniz? Evet/Hayır:")
@@ -31,8 +32,10 @@ while True:
         else:
             print("Çıkış Yapılıyor...")
             break
+            
     elif (islem == 2):
         yatirma_miktari = float(input("Yatırmak İstediğiniz Miktarı Giriniz:"))
+        
         bakiye += yatirma_miktari
         print("Yeni Bakiyeniz:{} TL".format(bakiye))
         islem_devam = input("Başka İşlem Yapmak İster misiniz? Evet/Hayır:")
@@ -41,9 +44,15 @@ while True:
         else:
             print("Çıkış Yapılıyor...")
             break
+            
     elif islem == 3:
         cekme_miktari = float(input("Çekmek İstediğiniz Miktarı Giriniz:"))
+        
         bakiye -= cekme_miktari
+            if (bakiye < 0):
+                print("Bu Miktarı Çekemezsiniz...")
+                continue
+        
         print("Yeni Bakiyeniz:{} TL".format(bakiye))
         islem_devam = input("Başka İşlem Yapmak İster misiniz? Evet/Hayır:")
         if islem_devam == "Evet":
@@ -51,6 +60,7 @@ while True:
         else:
             print("Çıkış Yapılıyor...")
             break
+            
     else:
         print("Lütfen Geçerli Bir İşlem Seçiniz...")
         continue
